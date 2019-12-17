@@ -1,5 +1,7 @@
 package br.com.stefanini.hackathon.model;
 
+import java.util.Objects;
+
 public class Candidato {
 
     private String nome;
@@ -8,6 +10,20 @@ public class Candidato {
     private boolean status;
 
     public Candidato() {
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Candidato)) return false;
+        Candidato candidato = (Candidato) o;
+        return isStatus() == candidato.isStatus() &&
+                getCidade().equals(candidato.getCidade());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getCidade(), isStatus());
     }
 
     public Candidato(String nome, String cidade, double nota) {

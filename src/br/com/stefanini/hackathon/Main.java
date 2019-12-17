@@ -3,9 +3,9 @@ package br.com.stefanini.hackathon;
 import br.com.stefanini.hackathon.controller.CadastroCandidato;
 import br.com.stefanini.hackathon.model.Candidato;
 import br.com.stefanini.hackathon.util.Validacao;
+import br.com.stefanini.hackathon.util.VetorUtil;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Scanner;
@@ -24,8 +24,9 @@ public class Main {
     private static int qtdVagas = 0;
 
     private static Scanner scanner = new Scanner(System.in);
-
-    private static List<Candidato> listaCandidatos = new ArrayList<>();
+    static VetorUtil vet = new VetorUtil();
+    private static List<Candidato> listaCandidatos = vet.getLista();
+//    private static List<Candidato> listaCandidatos = new ArrayList<>();
 
     public static void main(String[] args) throws IOException {
         int opcaoEscolhida = -1;
@@ -76,7 +77,7 @@ public class Main {
                     break;
 
                 case LISTAR_PERCENTUAL:
-
+                    System.out.println(Validacao.retornaFrequencia(listaCandidatos));
                     break;
                 case GERAR_ARQUIVOS:
                     Calendar data = Calendar.getInstance();
