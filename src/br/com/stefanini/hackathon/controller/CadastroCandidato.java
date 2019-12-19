@@ -1,6 +1,5 @@
 package br.com.stefanini.hackathon.controller;
 
-import br.com.stefanini.hackathon.interfaces.Crud;
 import br.com.stefanini.hackathon.model.Candidato;
 import org.jetbrains.annotations.NotNull;
 
@@ -10,7 +9,7 @@ import java.io.IOException;
 import java.util.Comparator;
 import java.util.List;
 
-public class CadastroCandidato implements Crud {
+public class CadastroCandidato {
     public static void cadastrarCandidato(Candidato candidato, @NotNull List<Candidato> listaCandidatos) {
         listaCandidatos.add(candidato);
     }
@@ -45,7 +44,7 @@ public class CadastroCandidato implements Crud {
             System.out.println("******************************COLOCAÇÃO DOS CANDIDATOS*******************************");
             System.out.println("*************************************************************************************");
             for (int i = 0; i < listaCandidatos.size(); i++) {
-                System.out.printf("%dª colocaado -  %s \n", i + 1, listaCandidatos.get(i).toString());
+                System.out.printf("%dª colocado -  %s \n", i + 1, listaCandidatos.get(i).toString());
             }
         } else {
             System.out.println("Não existem candidatos cadastrados");

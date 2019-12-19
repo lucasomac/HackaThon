@@ -17,11 +17,10 @@ public class Validacao {
     }
 
     public static Map<String, Integer> retornaFrequencia(List<Candidato> listaCandidatos) {
-        Map<String, Integer> map = new HashMap<String, Integer>();
+        Map<String, Integer> map = new HashMap();
         for (Candidato canditado : listaCandidatos) {
             int frequency = Collections.frequency(listaCandidatos, canditado);
-            System.out.println(frequency);
-            map.put(String.valueOf(canditado), frequency);
+            map.put(canditado.getCidade().concat(String.valueOf(canditado.isStatus())), frequency);
         }
         return map;
     }

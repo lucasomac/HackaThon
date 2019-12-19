@@ -77,7 +77,8 @@ public class Main {
                     break;
 
                 case LISTAR_PERCENTUAL:
-                    System.out.println(Validacao.retornaFrequencia(listaCandidatos));
+
+//                    System.out.println(retornaFrequencia(listaCandidatos));
                     break;
                 case GERAR_ARQUIVOS:
                     Calendar data = Calendar.getInstance();
